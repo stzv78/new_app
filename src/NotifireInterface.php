@@ -11,4 +11,5 @@ interface NotifireInterface
      * @return boolean
      */
     public function send($to, $from, $subject, $message);
+
 }

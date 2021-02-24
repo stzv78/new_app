@@ -22,10 +22,11 @@ class SendInBlueService implements NotifireInterface
             'subject'    => $subject,
             'message'       => $message,
         ];
+
         $result = $this->sendInBlue->send_email($email);
         /** again for the purposes of the demo, we're going to fake a success. */
-        return true;
+        //return true;
         /** this code will work once the account is activated */
-        //return $result['code'] === 'success';
+        return $result['code'] === 'success';
     }
 }
