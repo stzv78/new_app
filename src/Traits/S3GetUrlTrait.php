@@ -22,6 +22,11 @@ trait S3GetUrlTrait
             'Key' => $key
         ]);
 
+        $command = $client->getCommand('GetObject', [
+            'Bucket' => $bucket,
+            'Key' => $key
+        ]);
+        
         $request = $client->createPresignedRequest($command, '+20 minutes');
 
         return (string) $request->getUri();
